@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <title>About</title>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Oswald:400" rel="stylesheet"> 
+        <!-- Style Css -->
+        <link rel="stylesheet" href="/assets/css/style.css">
+        
+        <link rel="shortcut icon" type="image/ico" href="/assets/img/favicon.ico"/>
+    </head>
+  
+  <body>
+      <div id="header"></div>
+      <div class="content space-header">
+      <div class="container my-4">
+        <h1> About </h1> 
+      <div class="about-template-container"> </div>
+      </div>
+        <div class="container my-4 pt-3">
+            <h2> Team </h2>
+            <div class="d-flex justify-content-around flex-direction: row">
+                <div class="teamOne-template-container"></div>
+                <div class="teamTwo-template-container"></div>
+                <div class="teamThree-template-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br></br>
+    <div id="footer"></div>
+
+    <!-- Template -->
+    
+    <script type="text/html" id="info-template">
+        <p class="text-justify" data-content="about">
+    </script>
+
+    <script type="text/html" id="team-template">
+        <div class="card my-2" style="width: 16rem;">
+            <img data-src="name" class="card-img-top rounded-circle" data-format="imgFormatter" data-format-target="src" data-alt="name">
+            <div class="card-body">
+                <h3 class="h4 card-text font-weight-bold" data-content="name"></h3>
+                <p class="card-text" data-content="description"></p>
+            </div>
+        </div>
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"></script>
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/info.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(getInfo());    
+    </script>
+
+    </body>
+</html>

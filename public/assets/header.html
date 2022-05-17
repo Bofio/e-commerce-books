@@ -1,0 +1,47 @@
+<header>       
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light shadow-sm" >
+      <a class="navbar-brand" href="/index.html">
+          <img src="/assets/img/logo.png" width="60" height="32" class="d-inline-block align-top" alt="MDGbooks">
+          MDGbooks
+      </a>  
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle text-text" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Books
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-text" href="/pages/books.html" onclick="setEbook()">eBooks</a>
+                        <a class="dropdown-item text-text" href="/pages/books.html" onclick="clearFilter()">All Books</a>
+                        <a class="dropdown-item text-text" href="/pages/bestseller.html" onclick="clearFilter()">Best Sellers</a>
+                        <a class="dropdown-item text-text" href="/pages/ourFavorites.html" onclick="clearFilter()">Our Favorites</a>
+                      </div>
+                    </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-text" href="/pages/events.html" onclick="clearFilter()">Events</a>
+              </li>
+              </li>
+              <li class="nav-item"> 
+                <a class="nav-link text-text" href="/pages/authors.html">Authors</a>
+              </li>
+            </ul>
+            <div id="beforeLogIn">
+              <a href="/pages/login.html" class="btn btn-outline-secondary btn-sm" id="btn-login">Log In</a>
+              <a href="/pages/register.html" class="btn btn-outline-secondary btn-signup btn-sm">Sign Up</a>
+            </div>
+            <div id="afterLogIn">
+              <button class="btn btn-default" id="btn-cart" type="button">
+                <label for="cart" class="sr-only">Cart</label>
+                <a href="/pages/cart.html"><i id="cart" class="fas fa-shopping-cart fa-lg" aria-hidden="true"></i><p class="sr-only">Cart</p></a>
+              </button>
+              <button class="btn btn-outline-secondary btn-sm btn-signup" type="submit" onclick="logout()">Log Out</button>
+            </div>
+    </div>
+  </nav>
+</header>

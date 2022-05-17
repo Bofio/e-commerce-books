@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title></title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400" rel="stylesheet"> 
+    <link rel="shortcut icon" type="image/ico" href="../assets/img/favicon.ico"/>
+    <!-- Style Css -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="content space-header">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page"><a href="/pages/authors.html" id="arrow" class="no-underline breadcrumb-content"><i class="fas fa-arrow-up fa-lg mr-3"></i>Author</a></li>
+        </ol>
+      </nav>
+        
+        <div class="container my-4"> 
+            <div class="author-template-container"></div>
+            <h2 class="my-3 pt-4">Books:</h2>
+            <div class="d-flex flex-direction: row">
+              <div class="book1-template-container"></div>
+              <div class="book2-template-container"></div>
+              <div class="book3-template-container"></div>
+              <div class="book4-template-container"></div>
+              <div class="book5-template-container"></div>
+            </div>
+            <h2 class="my-3 pt-4">Events:</h2>
+            <div class="d-flex flex-direction: row">
+              <div class="eventCard1-template-container"></div>
+              <div class="eventCard2-template-container"></div>
+              <div class="eventCard3-template-container"></div>
+            </div>
+        </div>
+    </div>
+      
+
+
+  <div id="footer"></div>
+
+  <!-- Template -->
+  <script type="text/html" id="template">
+    <h1 class="my-3" data-content="name"> </h1>
+    <img data-src="authorid" data-format="picFormatter" data-format-target="src" class="rounded-circle mx-auto d-block my-4" data-alt="name" style="width: 15rem;">
+    <p data-content="life" class="text-justify"></p>
+    <h2 class="my-3 pt-4">Awards:</h2>
+    <p data-content="award" class="text-justify"></p>
+  </script>
+
+  <script type="text/html" id="bookTemplate">
+    <a data-href="id" data-format="bookHrefFormatter" data-format-target="href" class="card my-3 mx-responsive shadow-sm card-link" style="width: 10rem;">
+            <img data-src="id" data-format="picBookFormatter" data-format-target="src" class="card-img-top" data-alt="title">
+            <div class="card-body">
+              <p class="card-text font-weight-bold"  data-content="title"></p>
+            </div>
+    </a>
+  </script>
+
+  <script type="text/html" id="eventTemplate">
+    <div class="card mb-5 mx-responsive shadow-sm event-card" style="width: 20rem;">
+      <a  data-href="id" data-format="eventHrefFormatter" data-format-target="href" class="card-link">
+       <img class="card-img-top"  data-format="picMobileFormatter" data-format-target="src" data-src="id" alt="Event image">
+       <div class="card-body">
+         <h5 class="card-title" data-content="title"></h5>
+         <p class="card-text text-muted" data-format="dateFormatter" data-content="date"></p>
+       </div>
+     </a>
+     </div>
+    </script>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->    
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/author.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(getAuthorById());
+  </script>
+
+  </body>
+</html>

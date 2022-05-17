@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title></title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400" rel="stylesheet"> 
+    <link rel="shortcut icon" type="image/ico" href="../assets/img/favicon.ico"/>
+    <!-- Style Css -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="content space-header">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/pages/books.html" id="arrow" class="no-underline breadcrumb-content"><i class="fas fa-arrow-up fa-lg mr-3"></i>Book</a></li>
+        </ol>
+      </nav>
+        
+        <div class="container my-4">           
+                <div class="book-template-container"></div> 
+                <div class="row">
+                  <div class="col-12 col-lg-8">  
+                     <div class="facSheet-template-container"></div>
+                      <h2 class="my-3 pt-4">Review:</h2>
+                      <div class="review-template-container"></div>
+                  </div>
+                  <div class="col-12 col-lg-4">
+                        <h3 class="h4 my-3 pt-4">Similar book:</h3>
+                        <p>Do you love this book? We think you'd like also those ones!</p>
+                      <div class="d-flex flex-direction: row">
+                        <div class="bookCard1-template-container"></div>
+                        <div class="bookCard2-template-container"></div>
+                      </div>
+                      <h3 class="h4 my-3 pt-4">Related events:</h3>
+                      <div class="d-flex flex-direction: row">
+                        <div class="eventCard-template-container"></div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+      
+
+  <div id="footer"></div>
+
+  <!-- Template -->
+  <script type="text/html" id="template">
+   <div class="clearfix">
+      <h1 class="py-3 my-4" data-content="title"></h1>  
+      <div class="no-mobile">
+        <img data-src="id" data-format="picFormatter" data-format-target="src" class="mr-5 float-left" data-alt="title" style="width: 15rem;">
+        <div class="desktop-book-intro">
+        <p data-content="intro" class="text-justify float-centre"></p>
+      </div>
+      <div class="tablet-book-intro">
+        <p data-content="intro" data-format="introLongFormatter"></p>
+        <a onclick="showMore()" id="myBtn">Read more</a>
+      </div>
+      </div>
+      <div class="container yes-mobile">
+        <img class="center" data-src="id" data-format="picFormatter" data-format-target="src" class="mr-5 float-left" data-alt="title" style="width: 15rem;">
+        <div class="my-4">
+          <p data-content="intro" data-format="introMoileLongFormatter"></p>
+          <a onclick="showMoreMobile()" id="myBtnMobile">Read more</a>
+        </div>
+      </div>
+      <div class="author-template-container"></div>
+    </div>
+  </script>
+
+  <script type="text/html" id="template2">
+    
+    <div class="row my-5">
+      <div class="col-2">
+        <p class="font-weight-bold"> Buy:<p>
+        </div>
+        <div class="col-3 mr-3">
+        <label for="paper" data-content="price" data-format="bookPriceFormatter" class="label-filter"></label><br>
+        <button id="paper" class="btn btn-primary" onclick='buy("false")'><i class="fas fa-shopping-cart cart-book mr-3" aria-hidden="true"></i><b>Paper</b></button>
+      </div>
+      <div class="col">
+        <label for="ebook" data-content="price" data-format="eBookPriceFormatter" class="label-filter"></label><br>
+        <a id="ebook" class="btn btn-primary" data-class="ebook" data-format="ebookButtonFormatter" data-format-target="class" onclick='buy("true")'><i class="fas fa-shopping-cart cart-book mr-3" aria-hidden="true"></i><b>eBook</b></a> 
+      </div>
+    </div>
+    <div id="bought" class="alert alert-info" role="alert" style="display:none;">We add the book to your cart!</div>
+    </p>
+    <p class="mt-3">Fact Sheet:</p>
+    <ul>
+      <li data-content="factSheet" data-format="factSingleFormatter"></li>
+    </ul>
+  </script>
+
+  <script type="text/html" id="author-template">
+    <a data-href="authorid" data-content="name" data-format="authorOneFormatter"></a>
+  </script>
+
+  <script type="text/html" id="event-template">
+    <div class="card mb-3 mx-3 shadow-sm event-card" style="width: 18rem;">
+      <a  data-href="id" data-format="eventHrefFormatter" data-format-target="href" class="card-link">
+       <img class="card-img-top"  data-format="picMobileFormatter" data-format-target="src" data-src="id" alt="Event image">
+       <div class="card-body">
+         <h4 class="h5 card-title" data-content="title"></h4>
+         <p class="card-text text-muted" data-format="dateFormatter" data-content="date"></p>
+       </div>
+     </a>
+     </div>
+    </script>
+
+    <script type="text/html" id="review-template">
+      <div class="card shadow-sm my-2">
+        <div class="card-header">
+          <h3 class="h5 float-left" data-content="title"></h3>
+          <img data-src="stars" data-format="starsFormatter" data-format-target="src" alt="vote" class="float-right"style="width:100px;">
+        </div>
+        <div class="card-body">
+          <p class="card-text" data-content="text"></p>
+        </div>
+      </div>
+    </script> 
+
+        
+  <script type="text/html" id="book-template">
+    <a data-href="bookid2" data-format="bookHrefFormatter" data-format-target="href" class="card my-3 ml-3 mr-2 shadow-sm card-link" style="width: 10rem;">
+    <img data-src="bookid2" data-format="picFormatter" data-format-target="src" class="card-img-top" data-alt="title">
+      <div class="card-body">
+        <p class="card-text font-weight-bold"  data-content="title"></p>
+      </div>
+    </a>
+  </script>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->    
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/cart.js"></script>
+  <script src="/assets/js/book.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(getBookById());
+  </script>
+
+  </body>
+</html>

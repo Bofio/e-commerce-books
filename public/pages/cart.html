@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Cart</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400" rel="stylesheet"> 
+    <link rel="shortcut icon" type="image/ico" href="../assets/img/favicon.ico"/>
+    <!-- Style Css -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="content space-header">
+    <div class="container my-4"> 
+      <h1 class="my-3">Cart</h1>
+      <div class="row">
+        <div class="col-12 col-lg-9 my-3">
+          <div class="rounded-lg border-cart">
+            <div class="container">          
+              <div id="cart-elem" class="cart-template-container"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg my-3">
+            <div class="rounded-lg border-cart mx-4">
+              <h2 class="mx-2">Subtotal:</h2>
+              <div id="total"></div>
+              <p class="mx-2"><small>Tax and shipping will be calculated at checkout.</small></p>
+            </div>
+            <button class="btn btn-primary m-4">Check Out</button>
+        </div>
+  </div>
+  <p class="my-4">Please read our <a class="btn-link" href="/pages/OrderingAndShipping.html">Ordering and Shipping information</a> before checking out.</p>
+</div>
+</div>
+
+  <div id="footer"></div>
+
+  <!-- Template -->
+  <script type="text/html" id="template">
+    <div class="row border border-dark rounded">
+      <div class="col-4 col-md-2 col-xl-2 border-bottom">
+        <span class="badge badge-pill my-3" data-class="status" data-format="statusFormatter" data-format-target="class" data-content="status"></span>
+      </div>
+      <div class="col-8 col-md-10 col-xl border-right border-bottom">
+        <a data-href="bookId" data-format="bookHrefFormatter" data-format-target="href" class="my-3 font-weight-bold card-link" data-content="title"></a>
+      </div>
+      <div class="col-6 col-md-4 col-xl-2 border-right border-bottom">
+        <p class="my-3" data-content="ebook" data-format="formatFormatter"></p>
+      </div>
+      <div class="col-6 col-md-4 col-xl-2 border-right border-bottom d-flex align-items-center">
+        <a class="btn-cart ml-3" data-class="bookId" data-format="bookIdFormatter" data-format-target="class" onclick="minusone(event)"> ➖ </a>
+        <p class="my-3 ml-3" data-content='quantity' data-format="quantityFormatter"> </p>
+        <a class="btn-cart ml-3" data-class="bookId" data-format="bookIdFormatter" data-format-target="class" onclick="plusone(event)"> ➕ </a>
+      </div>
+        <div class="col col-md-4 col-xl-2">
+          <p class="my-3" data-content="value"></p>
+        </div>
+    </div>
+  </script>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->    
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.loadtemplate/1.5.10/jquery.loadTemplate.min.js"></script>
+  <script src="/assets/js/utils.js"></script>
+  <script src="/assets/js/cart.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(getCart());
+   </script>
+
+  </body>
+</html>
