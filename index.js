@@ -8,11 +8,11 @@ var fs = require("fs"),
 var app = require("connect")();
 var swaggerTools = require("swagger-tools");
 var jsyaml = require("js-yaml");
-var serverPort = process.env.PORT || 8080;
+var serverPort = 8080;
 let cookieSession = require("cookie-session");
 let cookieParser = require("cookie-parser");
 let serveStatic = require("serve-static");
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 let saltRounds = 10;
 
 let { setupDataLayer } = require("./service/DataLayer");
@@ -21,7 +21,9 @@ let { setupDataLayer } = require("./service/DataLayer");
 var options = {
   swaggerUi: path.join(__dirname, "/swagger.json"),
   controllers: path.join(__dirname, "./controllers"),
+  useStubs: process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0,
   useStubs: process.env.NODE_ENV === "development" // Conditionally turn on stubs (mock mode)
+  
 };
 
 // The Swagger document (require it, build it programmatically, fetch it from a URL, ...)

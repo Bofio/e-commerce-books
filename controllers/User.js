@@ -2,7 +2,7 @@
 
 var utils = require('../utils/writer.js');
 var User = require('../service/UserService');
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 let saltRounds = 10;
 
 
